@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request,Response
+from flask import Flask, render_template, request,jsonify
 from flask_bootstrap import Bootstrap
 from flask_cors import CORS
 import json
@@ -27,7 +27,7 @@ def main():
     res = {
         'comments':comments
     }
-    return Response(json.dumps(res),mimetype='application/json')
+    return jsonify(res)
 
 if __name__ == '__main__':
     app.run(debug=False)
