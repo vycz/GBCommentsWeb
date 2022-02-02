@@ -1,10 +1,12 @@
 from flask import Flask, render_template, request
 from flask_bootstrap import Bootstrap
+from flask_cors import CORS
 
 from GBComments import produceComments
 
  
 app = Flask(__name__)
+CORS(app, supports_credentials=True)
 bootstrap = Bootstrap(app)
  
 @app.route('/', methods=["GET", "POST"])
